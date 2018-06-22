@@ -1,0 +1,42 @@
+axioms:
+E x P(x);
+A x A y (P(x) => Q(y));
+A x A y D (x, y)
+
+goal test0: ~A x W(x) => E x ~W(x)
+proof
+	[~A x W(x):
+		[~E x ~W(x):
+			[fresh a:
+				[~W(a):
+					E x ~W(x);
+					F];
+				~~W(a);
+				W(a)];
+			A x W(a);
+			F];
+		~~E x ~W(x);
+		E x ~W(x)];
+	~A x W(x) => E x ~W(x)
+end.
+
+goal test1: E x A y (P(x) => Q(y))
+proof
+	[fresh a:
+		A y (P(a) => Q(y))];
+	E x A y (P(x) => Q(y))
+end.
+
+goal zle_podstawienie: ( A x E y R(x, y) ) => ( E y R(y, y) )
+proof
+	[A x E y R(x, y):
+		[~E y R(y, y):
+			[fresh y :
+				E y R(y, y);
+				F];
+			A s F;
+			F];
+		~~E y R(y, y);
+		E y R(y, y)];
+	( A x E y R(x, y) ) => ( E y R(y, y) )
+end.

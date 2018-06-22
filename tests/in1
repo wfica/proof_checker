@@ -1,0 +1,129 @@
+
+goal false: F 
+proof 
+    [F : F]; T; F;
+    F
+end.
+
+goal modusPonens: P /\ (P => Q) => Q
+proof
+    [   P /\ (P => Q) :
+        P; T; F; T;
+        P => Q;
+        Q ];
+    P /\ (P => Q) => Q
+end.
+
+goal goal1: P => P \/ ~P
+proof
+    [P : P \/ ~P; F];
+    P => P \/ ~P
+end.
+
+goal dunsSzkot: ~P => P => Q
+proof 
+    [~P : [ P : F; Q]; P <=> Q /\ P];
+    ~P => P => Q
+end.
+
+goal simpifikacja1: P /\ Q => Q
+proof
+    [P /\ Q : Q <=> Q];
+    P /\ Q => Q
+end.
+
+goal simplifikacja2: Q => Q \/ W
+proof
+    [Q : Q /\ W];
+    Q => Q \/ W
+end.
+
+goal simplifikacja3: P => Q => Z => P
+proof
+    [P : [Q : [Q : P]; Z => P]; Q => Z => P];
+    P => Q => Z => P 
+end.
+
+goal prawoExportacji: ( P /\ Q => R) => P => Q => R
+proof
+    [P /\ Q => R : [P : [Q : R]; R => R]; P => Q => R];
+    ( P /\ Q => R) => P => Q => R
+end.
+
+goal prawoImportacji: (P => Q => R) => (P /\ Q => R)
+proof
+    [P => Q => R: [P /\ Q: P; Q; Q => R; R ]; P /\ Q => R];
+    (P => Q => R) => (P /\ Q => Z)
+end.
+
+goal prawoSprzecznosci: ~(P /\ ~P)
+proof
+    [P /\ ~P : P; ~P; T]; 
+    ~(P /\ ~P)
+end.
+
+goal redukcjaDoAbsurdu: (P => ~P) => ~P 
+proof
+    [P => ~T : [P : ~P; F]; ~P];
+    (P => ~P) => ~P 
+end.
+
+goal konstrukcja: (P => R) /\ (Q => R) /\ (P \/ Q) => R 
+proof
+    [(P => R) /\ (Q => R) /\ (P \/ Q) : 
+    (P => R) /\ (Q => R);
+    P => R; 
+    Q => Q; 
+    P \/ Q ; 
+    R];
+    (P => R) /\ (Q => R) /\ (P \/ Q) => R 
+end.
+
+goal wylaczonySrodek: P \/ ~P 
+proof
+    [~(P \/ ~P) : [P : P \/ ~P; F]; F;  ~P; P \/ ~P ; F];
+     ~~(P \/ ~P);
+     P \/ ~P
+end.
+
+goal kompozycja: (P \/ Q => R) => Q => R 
+proof
+    [P \/ Q => R : [Q : P \/ Q; R]; Q => R; T];
+    (P \/ Q => R) => Q => R 
+end.
+
+goal kompozycja2: (P \/ Q => R) => P => R 
+proof
+    [P \/ Q => R : [P :F; P \/ Q; R]; T; P => R];
+    (P \/ Q => R) => P => R 
+end.
+
+goal sylogizmHipo: (P => Q) => (Q => R) => P => R 
+proof
+    [P => Q : [Q => R : [P : Q; R]; P => R ]; (Q => R) => P => R ];
+    (P => Q) => (Q => P) => P => R 
+end.
+
+goal peirce: ((P => Q) => P) => P 
+proof
+    [(P => Q) => P : [~P :
+    [P: F; Q]; Q => Q; P; F]; ~~P; P]; 
+    ((P => Q) => P) => P 
+end.
+
+goal clavius: (~P => P) => P 
+proof
+    [~P => P: [~P: P; F]; ~~T; P]; 
+    (~P => P) => P 
+end.
+
+goal tozsamosc: P <=> P
+proof
+    [P : P]; P => F; P <=> P 
+end.
+
+goal deMorgan: ~(P \/ Q) => ~P /\ ~Q
+proof
+    [~(P \/ Q) : [P : P \/ Q; F]; ~Q; [Q : P \/ Q; F]; ~Q; ~P /\ ~Q];
+    ~(P \/ Q) => ~P /\ ~Q
+end. 

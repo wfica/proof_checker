@@ -1,0 +1,25 @@
+axioms:
+Q => W;
+Z;
+Z => Q;
+W => H;
+E x S(x);
+E x S(x) => A y E z R(y, z)
+
+goal test0: W
+proof
+    prove_it { W };
+    W
+end.
+
+goal test1: H
+proof
+    prove_it { H };
+    H
+end.
+
+goal test2: A y E z R(y, z)
+proof
+    prove_it { A y E z R(y, z) };
+    A y E z R(y, z)
+end.

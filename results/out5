@@ -1,0 +1,19 @@
+0:
+Dowód: W
+Z;
+Impl(Z, Q);
+Impl(Q, W).
+
+    Dowód test0 poprawny.
+1:
+Dowód: H
+W;
+Impl(W, H).
+
+    Dowód test1 poprawny.
+2:
+Dowód: A y E z R(yz)
+E x S(x);
+Impl(E x S(x), A y E z R(yz)).
+
+    Dowód test2 poprawny.

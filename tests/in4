@@ -1,0 +1,124 @@
+axioms:
+E x P(x);
+A x A y (P(x) => Q(y))
+
+goal test0: ~A x ~P(x)
+proof
+	[A x ~P(x):
+		[fresh a P(a) :
+			~P(a);
+			F];
+		F];
+	~A x ~P(x)
+end.
+
+
+
+goal test1: A x Q(f(x))
+proof
+    [fresh a:
+    	[fresh b P(b):
+    		A y (P(b) => Q(y));
+    		P(b) => Q(f(a));
+    		Q(f(a))
+    	];
+    	Q(f(a))
+    ];
+    A x Q(f(x))
+end.
+
+goal test2: ( A x (W(x) /\ S(x)) ) => (A x W(x) ) /\ (A x S(x) )
+proof
+	[A x (W(x) /\ S(x)):
+		[fresh a:
+			W(a) /\ S(a);
+			W(a)];
+		A x W(x);
+		[fresh a:
+			W(a) /\ S(a);
+			S(a)];
+		A x S(x);
+		(A x W(x)) /\ (A x S(x) ) ];
+	( A x (W(x) /\ S(x)) ) => (A x W(x) ) /\ (A x S(x) )
+end.
+
+goal test3: ~E x W(x) => A x ~W(x)
+proof
+	[~E x W(x):
+		[fresh a:
+			[W(a):
+				E x W(x);
+				F];
+			~W(a)];
+		A x ~W(x)];
+	~E x W(x) => A x ~W(x)
+end.
+
+goal  test3: A x ~W(x) => ~E x W(x)
+proof
+	[A x ~W(x):
+		[E x W(x):
+			[fresh a W(a):
+				~W(a);
+				F];
+			F];
+		~E x W(x)];
+	 A x ~W(x) => ~E x W(x)
+end.
+
+goal test4: E x ~W(x) => ~A x W(x)
+proof
+	[E x ~W(x):
+		[A x W(x):
+			[fresh a ~W(a):
+				W(a);
+				F];
+			F];
+		~A x W(x)];
+	E x ~W(x) => ~A x W(x)
+end.
+
+goal test5: ~A x W(x) => E x ~W(x)
+proof
+	[~A x W(x):
+		[~E x ~W(x):
+			[fresh a:
+				[~W(a):
+					E x ~W(x);
+					F];
+				~~W(a);
+				W(a)];
+			A x W(x);
+			F];
+		~~E x ~W(x);
+		E x ~W(x)];
+	~A x W(x) => E x ~W(x)
+end.
+
+goal test6: E x A y (P(x) => Q(y))
+proof
+	[ ~E x A y (P(x) => Q(y)) :
+		[fresh a:
+			A y (P(a) => Q(y));
+			E x A y (P(x) => Q(y));
+			F];
+		A x F;
+		F];
+	~~E x A y (P(x) => Q(y));
+	E x A y (P(x) => Q(y))
+end.
+
+goal test7: A x W(x) => E y W(f(y,y))
+proof
+	[A x W(x):
+		[~E y W(f(y,y)):
+			[fresh a:
+				W(f(a,a));
+				E y W(f(y,y));
+				F];
+			A x F;
+			F];
+		~~E y W(f(y,y));
+		E y W(f(y,y))];
+	A x W(x) => E y W(f(y,y))	
+end.

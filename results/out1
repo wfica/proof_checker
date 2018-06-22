@@ -1,0 +1,38 @@
+0:  Błąd w dowodzie w linii numer 2
+    Dowód false błędny!
+1:  Błąd w dowodzie w linii numer 3
+    Dowód modusPonens błędny!
+2:  Błąd w dowodzie w linii numer 2
+    Dowód goal1 błędny!
+3:  Błąd w dowodzie w linii numer 2
+    Dowód dunsSzkot błędny!
+4:  Błąd w dowodzie w linii numer 1
+    Dowód simpifikacja1 błędny!
+5:  Błąd w dowodzie w linii numer 1
+    Dowód simplifikacja2 błędny!
+6:  Błąd w dowodzie w linii numer 3
+    Dowód simplifikacja3 błędny!
+7:  Błąd w dowodzie w linii numer 3
+    Dowód prawoExportacji błędny!
+8:  Dowód prawoImportacji błędny - nie dowodzi celu!
+9:  Błąd w dowodzie w linii numer 1
+    Dowód prawoSprzecznosci błędny!
+10:  Błąd w dowodzie w linii numer 2
+    Dowód redukcjaDoAbsurdu błędny!
+11:  Błąd w dowodzie w linii numer 3
+    Dowód konstrukcja błędny!
+12:  Błąd w dowodzie w linii numer 2
+    Dowód wylaczonySrodek błędny!
+13:  Błąd w dowodzie w linii numer 1
+    Dowód kompozycja błędny!
+14:  Błąd w dowodzie w linii numer 2
+    Dowód kompozycja2 błędny!
+15:  Dowód sylogizmHipo błędny - nie dowodzi celu!
+16:  Błąd w dowodzie w linii numer 3
+    Dowód peirce błędny!
+17:  Błąd w dowodzie w linii numer 2
+    Dowód clavius błędny!
+18:  Błąd w dowodzie w linii numer 1
+    Dowód tozsamosc błędny!
+19:  Błąd w dowodzie w linii numer 2
+    Dowód deMorgan błędny!
