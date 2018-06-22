@@ -1,7 +1,6 @@
 # Proof checker
-#### Wojtek Fica
 
-Proof checker implementation in OCaml. It reads a proof line by line and checks if a current statement can be deduced from the previous ones. It supports first order logic and axioms (statemnents that are considered true). See example inputs in [tests](/tests).  Details are available in Polish [here](proof_checker.pdf).
+Proof checker implementation in OCaml. It reads a proof line by line and checks if a current statement can be deduced from the previous ones. It supports first order logic and axioms (statements that are considered true). It can also fill a gaps in a proof. See example inputs in [tests](/tests).  Details are available in Polish [here](proof_checker.pdf).
 
 ### Exemplary proof
 ```
